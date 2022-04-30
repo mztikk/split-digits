@@ -2,6 +2,12 @@ pub struct SplitDigitIterator {
     num: usize,
 }
 
+impl SplitDigitIterator {
+    pub fn new(num: usize) -> Self {
+        Self { num }
+    }
+}
+
 impl Iterator for SplitDigitIterator {
     type Item = u8;
 
