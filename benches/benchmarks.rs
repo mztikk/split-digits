@@ -1,5 +1,3 @@
-#![feature(int_log)]
-
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
 use std::collections::VecDeque;
 
@@ -9,8 +7,15 @@ struct DigitAndPosition {
 }
 
 fn get_most_significant_digit_and_position(d: usize) -> DigitAndPosition {
-    let position = d.log10();
-    let digit = (d / 10_usize.pow(position)) as u8;
+    let mut d = d;
+    let mut position = 0;
+    let mut digit: u8 = 0;
+
+    while d > 0 {
+        digit = (d % 10) as u8;
+        d /= 10;
+        position += 1;
+    }
 
     DigitAndPosition { digit, position }
 }
