@@ -3,8 +3,6 @@ name = "split-digits"
 version = "0.1.0"
 edition = "2021"
 authors = ["Nils Feierabend <mztikk@outlook.de>"]
+repository = "https://github.com/mztikk/split-digits"
 license = "MIT"
 description = "library to parse and interpret poetic source code"
-
-
-[features]
